@@ -116,7 +116,7 @@ a:visited {
     }
 }
 
-@keyframes scale-text {
+/* @keyframes scale-text {
     to {
         font-size: 30px;
     }
@@ -124,5 +124,5 @@ a:visited {
     from { 
         font-size: 1px;
     }
-}
+} */
 
