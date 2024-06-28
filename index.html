@@ -9,6 +9,35 @@
     <title>Dev.Gerson</title>
 </head>
 
+<script>
+function handleScroll() {
+    const imgDiv = document.querySelector('.img');
+    const txtDiv = document.querySelector('.texto-header');
+
+    if (window.scrollY > 40) {
+        imgDiv.classList.add('esconder');
+        txtDiv.classList.add('esconder');
+    } else {
+        imgDiv.classList.remove('esconder');
+        txtDiv.classList.remove('esconder');
+    }
+}
+
+function checkWindowSize() {
+    if (window.innerWidth < 768) {
+        document.addEventListener('scroll', handleScroll);
+    } else {
+        document.removeEventListener('scroll', handleScroll);
+    }
+}
+
+// Verifique o tamanho da janela na inicialização
+checkWindowSize();
+
+// Verifique o tamanho da janela quando a janela é redimensionada
+window.addEventListener('resize', checkWindowSize);
+    </script>
+
 <body>
     <header class="top-anima">
         
