@@ -5,6 +5,7 @@ body {
 }
 
 main {
+    text-align: justify;
     margin-top: 53vw;
     font-size: 1rem;
     margin-inline: auto;
