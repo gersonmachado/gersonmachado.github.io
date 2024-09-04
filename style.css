@@ -5,7 +5,7 @@ body {
 }
 
 main {
-    margin-top: 70vw;
+    margin-top: 53vw;
     font-size: 1rem;
     margin-inline: auto;
     width: min(60ch, 100%);
@@ -214,14 +214,14 @@ a:visited {
 @media (max-width: 1200px) {
 
     main {
-        margin-top: 90vw;
+        margin-top: 80vw;
     }
 }
 
 @media (max-width: 800px) {
 
     main {
-        margin-top: 140vw;
+        margin-top: 100vw;
     }
     .top-anima {
         display: flex;
@@ -263,6 +263,6 @@ a:visited {
 @media (max-width: 500px) {
 
     main {
-        margin-top: 240vw;
+        margin-top: 180vw;
     }
 }
