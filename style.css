@@ -131,8 +131,8 @@ a:visited {
 @keyframes none-adapta {
     from {
         opacity: 1;
-        display: none;
-        visibility: hidden;
+        /* display: none;
+        visibility: hidden; */
     }
 
 
@@ -170,8 +170,8 @@ a:visited {
 @-webkit-keyframes none-adapta {
     from {
         opacity: 1;
-        display: none;
-        visibility: hidden;
+        /* display: none;
+        visibility: hidden; */
     }
 
 
@@ -253,7 +253,7 @@ a:visited {
 
 /* Responsividade */
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
 
     main {
         margin-top: 80vw;
@@ -305,6 +305,6 @@ a:visited {
 @media (max-width: 500px) {
 
     main {
-        margin-top: 180vw;
+        margin-top: 120vw;
     }
 }

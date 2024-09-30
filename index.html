@@ -21,7 +21,7 @@ function handleScroll() {
     const imgDiv = document.querySelector('.img');
     const txtDiv = document.querySelector('.texto-header');
 
-    if (isIOS() || window.scrollY > 40) {
+    if (isIOS() || window.scrollY > 20) {
         imgDiv.classList.add('esconder');
         txtDiv.classList.add('esconder');
     } else {
