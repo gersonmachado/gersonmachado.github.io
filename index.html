@@ -10,12 +10,18 @@
 </head>
 
 <script>
+
+// Função para detectar se o dispositivo é iOS
+function isIOS() {
+    return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
+
 function handleScroll() {
     const scrollY = window.scrollY || document.documentElement.scrollTop;
     const imgDiv = document.querySelector('.img');
     const txtDiv = document.querySelector('.texto-header');
 
-    if (window.scrollY > 40) {
+    if (isIOS() || window.scrollY > 40) {
         imgDiv.classList.add('esconder');
         txtDiv.classList.add('esconder');
     } else {
