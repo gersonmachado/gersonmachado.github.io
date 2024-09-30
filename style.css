@@ -63,6 +63,7 @@ main {
     background-image: url("avatartion2.png");
     background-size: cover;
     transition: 1s ease-in-out;
+    -webkit-transition: 1s ease-in-out; /* Para Safari */
     opacity: 1;
 }
 
@@ -128,6 +129,45 @@ a:visited {
 
 
 @keyframes none-adapta {
+    from {
+        opacity: 1;
+        display: none;
+        visibility: hidden;
+    }
+
+
+    10% {
+        opacity: 0; 
+        display: none;
+        visibility: hidden;
+    }
+
+    100% {
+        opacity: 0; 
+        display: none;
+        visibility: hidden;
+    }
+}
+
+/* Safari */
+
+@-webkit-keyframes hello-animacao {
+    0% {
+        transform: scaleY(1);
+    }
+    
+    30% {
+        box-shadow: 1px 1px 14px #00000017;
+    }
+
+    40% {
+        height: 100px;
+        box-shadow: 1px 1px 14px #0000003b;
+    }
+}
+
+
+@-webkit-keyframes none-adapta {
     from {
         opacity: 1;
         display: none;
