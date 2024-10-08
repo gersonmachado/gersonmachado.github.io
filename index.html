@@ -21,17 +21,22 @@ function handleScroll() {
     const imgDiv = document.querySelector('.img');
     const txtDiv = document.querySelector('.texto-header');
 
-    if (isIOS() || window.scrollY > 20) {
+    if (isIOS() || window.scrollY > 25) {
         imgDiv.classList.add('esconder');
         txtDiv.classList.add('esconder');
-    } else {
+    } 
+    
+    if (window.scrollY < 25) {
         imgDiv.classList.remove('esconder');
         txtDiv.classList.remove('esconder');
     }
+
+
 }
 
+
 function checkWindowSize() {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 800) {
         document.addEventListener('scroll', handleScroll);
     } else {
         document.removeEventListener('scroll', handleScroll);
@@ -41,12 +46,57 @@ function checkWindowSize() {
 // Verifique o tamanho da janela na inicialização
 checkWindowSize();
 
+
 // Verifique o tamanho da janela quando a janela é redimensionada
 window.addEventListener('resize', checkWindowSize);
+
+
+
+// Compatibilidade: teste p/ IOS
+document.addEventListener('DOMContentLoaded', () => {
+    const box = document.getElementById('topanima');
+
+    window.addEventListener('resize', () => {
+
+        const imgDiv = document.querySelector('.img');
+        const txtDiv = document.querySelector('.texto-header')
+        if (window.innerWidth < 800){
+            imgDiv.classList.add('esconder');
+            txtDiv.classList.add('esconder');
+        } else {
+            imgDiv.classList.remove('esconder');
+            txtDiv.classList.remove('esconder');
+        }
+    });
+
+
+    if (box) {
+    console.warn('Elemento com o id "topanima" OK!');
+    } else {
+    console.warn('Elemento com o id "topanima" não foi encontrado.');
+    }
+
+    const initialHeight = window.innerHeight; // Altura inicial da janela
+
+    // Define a altura inicial da caixa
+    box.style.height = `${initialHeight}px`;
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY; // Obtém a posição de rolagem vertical
+        const newHeight = Math.max(100, initialHeight - scrollTop); // Diminui a altura até um mínimo de 100px
+        
+        // Ajusta a altura da caixa
+        box.style.height = `${newHeight}px`;
+
+        // Altera a sombra conforme a altura
+        const boxShadow = newHeight < 100 ? '1px 1px 14px rgba(0, 0, 0, 0.3)' : '1px 1px 14px rgba(0, 0, 0, 0.1)';
+        box.style.boxShadow = boxShadow;
+    });
+});
     </script>
 
 <body>
-    <header class="top-anima">
+    <header class="top-anima" id="topanima">
         
         <div class="img"></div>
         <div class="texto-header">
