@@ -20,8 +20,13 @@ function handleScroll() {
     const scrollY = window.scrollY || document.documentElement.scrollTop;
     const imgDiv = document.querySelector('.img');
     const txtDiv = document.querySelector('.texto-header');
+    const main = document.querySelector('main')
 
-    if (isIOS() || window.scrollY > 25) {
+    if (isIOS()) {
+        main.style.marginTop = '200vw' /* teste IOS */
+    }
+
+    if (window.scrollY > 25) {
         imgDiv.classList.add('esconder');
         txtDiv.classList.add('esconder');
     } 
