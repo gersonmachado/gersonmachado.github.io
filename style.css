@@ -6,10 +6,10 @@ body {
 
 main {
     text-align: justify;
-    margin-top: 53vw;
+    margin-top: 45vw;
     font-size: 1rem;
     margin-inline: auto;
-    width: min(60ch, 100%);
+    width: min(70ch, 100%);
     margin-bottom: 10%;
 }
 
