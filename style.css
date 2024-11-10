@@ -6,11 +6,11 @@ body {
 
 main {
     text-align: justify;
-    margin-top: 52vw;
+    margin-top: 65%;
     font-size: 1rem;
     margin-inline: auto;
     width: min(75ch, 100%);
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 
 .texto-header{
