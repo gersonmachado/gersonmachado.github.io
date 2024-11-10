@@ -117,12 +117,13 @@ a:visited {
       /*translate: 10vw 0;*/
     }
     
-    30% {
+    /* 30% {
 
 
         box-shadow: 1px 1px 14px #00000017;
       /*translate: -100vw 0;*/
-    }
+   /*  }  */
+     
 
     40% {
         height: 100px;
@@ -160,9 +161,9 @@ a:visited {
         transform: scaleY(1);
     }
     
-    30% {
+    /* 30% {
         box-shadow: 1px 1px 14px #00000017;
-    }
+    } */
 
     40% {
         height: 100px;
@@ -174,8 +175,6 @@ a:visited {
 @-webkit-keyframes none-adapta {
     from {
         opacity: 1;
-        /* display: none;
-        visibility: hidden; */
     }
 
 
@@ -295,7 +294,7 @@ a:visited {
             height: 100%;
         }
 
-        25% {
+        30% {
             height: 50px;
             box-shadow: 1px 1px 14px #0000003b;
         }
