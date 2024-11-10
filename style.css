@@ -6,11 +6,11 @@ body {
 
 main {
     text-align: justify;
-    margin-top: 65%;
+    margin-top: 65vw;
     font-size: 1rem;
     margin-inline: auto;
     width: min(75ch, 100%);
-    margin-bottom: 5%;
+    margin-bottom: 10vw;
 }
 
 .texto-header{
@@ -267,7 +267,7 @@ a:visited {
 @media (max-width: 800px) {
 
     main {
-        margin-top: 100vw;
+        margin-top: 120vw;
     }
     .top-anima {
         display: flex;
@@ -310,6 +310,6 @@ a:visited {
 @media (max-width: 500px) {
 
     main {
-        margin-top: 120vw;
+        margin-top: 200vw;
     }
 }
