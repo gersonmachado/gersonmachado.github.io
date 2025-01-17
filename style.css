@@ -226,7 +226,8 @@ a:visited {
 
 .iconbox:hover {
      /* padding: 32px; */
-    box-shadow: 1px 1px 20px 1px #6f36f449;
+    box-shadow: 1px 1px 20px 1px #64646449;
+    transform: translateY(-2px); /* Efeito de elevação */
 }
 
 
