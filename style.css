@@ -336,6 +336,7 @@ a:visited {
     background-color: #218838; /* Verde mais escuro */
     border-color: #1e7e34;
     color: white;
+    transition: color 0.4s ease, transform 0.2s ease;
     transform: translateY(-2px); /* Efeito de elevação */
 }
 
