@@ -11,98 +11,98 @@
 
 <script>
 
-// Função para detectar se o dispositivo é iOS
-function isIOS() {
-    return /iPhone|iPad|iPod/i.test(navigator.userAgent);
-}
-
-function handleScroll() {
-    const scrollY = window.scrollY || document.documentElement.scrollTop;
-    const imgDiv = document.querySelector('.img');
-    const txtDiv = document.querySelector('.texto-header');
-    const main = document.querySelector('main')
-
-    if (isIOS()) {
-        main.style.marginTop = '215vw' /* teste IOS */
+    // Função para detectar se o dispositivo é iOS
+    function isIOS() {
+        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
     }
 
-    if (window.scrollY > 30) {
-        imgDiv.classList.add('esconder');
-        txtDiv.classList.add('esconder');
-    } 
-    
-    if (window.scrollY < 30) {
-        imgDiv.classList.remove('esconder');
-        txtDiv.classList.remove('esconder');
-    }
-
-
-}
-
-
-function checkWindowSize() {
-    if (window.innerWidth < 800) {
-        document.addEventListener('scroll', handleScroll);
-    } else {
-        document.removeEventListener('scroll', handleScroll);
-    }
-}
-
-// Verifique o tamanho da janela na inicialização
-checkWindowSize();
-
-
-// Verifique o tamanho da janela quando a janela é redimensionada
-window.addEventListener('resize', checkWindowSize);
-
-
-
-// Compatibilidade: teste p/ IOS
-document.addEventListener('DOMContentLoaded', () => {
-    const box = document.getElementById('topanima');
-
-    window.addEventListener('resize', () => {
-
+    function handleScroll() {
+        const scrollY = window.scrollY || document.documentElement.scrollTop;
         const imgDiv = document.querySelector('.img');
-        const txtDiv = document.querySelector('.texto-header')
-        if (window.innerWidth < 800){
+        const txtDiv = document.querySelector('.texto-header');
+        const main = document.querySelector('main')
+
+        if (isIOS()) {
+            main.style.marginTop = '215vw' /* teste IOS */
+        }
+
+        if (window.scrollY > 30) {
             imgDiv.classList.add('esconder');
             txtDiv.classList.add('esconder');
-        } else {
+        }
+
+        if (window.scrollY < 30) {
             imgDiv.classList.remove('esconder');
             txtDiv.classList.remove('esconder');
         }
-    });
 
 
-    if (box) {
-    console.warn('Elemento com o id "topanima" OK!');
-    } else {
-    console.warn('Elemento com o id "topanima" não foi encontrado.');
     }
 
-    const initialHeight = window.innerHeight; // Altura inicial da janela
 
-    // Define a altura inicial da caixa
-    box.style.height = `${initialHeight}px`;
+    function checkWindowSize() {
+        if (window.innerWidth < 800) {
+            document.addEventListener('scroll', handleScroll);
+        } else {
+            document.removeEventListener('scroll', handleScroll);
+        }
+    }
 
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY; // Obtém a posição de rolagem vertical
-        const newHeight = Math.max(100, initialHeight - scrollTop); // Diminui a altura até um mínimo de 100px
-        
-        // Ajusta a altura da caixa
-        box.style.height = `${newHeight}px`;
+    // Verifique o tamanho da janela na inicialização
+    checkWindowSize();
 
-        // Altera a sombra conforme a altura
-        const boxShadow = newHeight < 100 ? '1px 1px 14px rgba(0, 0, 0, 0.3)' : '1px 1px 14px rgba(0, 0, 0, 0.1)';
-        box.style.boxShadow = boxShadow;
+
+    // Verifique o tamanho da janela quando a janela é redimensionada
+    window.addEventListener('resize', checkWindowSize);
+
+
+
+    // Compatibilidade: teste p/ IOS
+    document.addEventListener('DOMContentLoaded', () => {
+        const box = document.getElementById('topanima');
+
+        window.addEventListener('resize', () => {
+
+            const imgDiv = document.querySelector('.img');
+            const txtDiv = document.querySelector('.texto-header')
+            if (window.innerWidth < 800) {
+                imgDiv.classList.add('esconder');
+                txtDiv.classList.add('esconder');
+            } else {
+                imgDiv.classList.remove('esconder');
+                txtDiv.classList.remove('esconder');
+            }
+        });
+
+
+        if (box) {
+            console.warn('Elemento com o id "topanima" OK!');
+        } else {
+            console.warn('Elemento com o id "topanima" não foi encontrado.');
+        }
+
+        const initialHeight = window.innerHeight; // Altura inicial da janela
+
+        // Define a altura inicial da caixa
+        box.style.height = `${initialHeight}px`;
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY; // Obtém a posição de rolagem vertical
+            const newHeight = Math.max(100, initialHeight - scrollTop); // Diminui a altura até um mínimo de 100px
+
+            // Ajusta a altura da caixa
+            box.style.height = `${newHeight}px`;
+
+            // Altera a sombra conforme a altura
+            const boxShadow = newHeight < 100 ? '1px 1px 14px rgba(0, 0, 0, 0.3)' : '1px 1px 14px rgba(0, 0, 0, 0.1)';
+            box.style.boxShadow = boxShadow;
+        });
     });
-});
-    </script>
+</script>
 
 <body>
     <header class="top-anima" id="topanima">
-        
+
         <div class="img"></div>
         <div class="texto-header">
             <h1 class="titulo-header">Olá! Sou o Gerson Machado!</h1>
@@ -110,71 +110,86 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <div class="baixar-cv">
             <p>Baixar meu currículo:</p>
-            <a href="/proj/CurrículoGerson.pdf" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"/>
-              </svg> </a>
+            <a href="/proj/CurrículoGerson.pdf" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="40"
+                    height="40" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z" />
+                </svg> </a>
         </div>
-        
+
     </header>
 
     <main>
 
         <center>
-            <img src="proj/icos.jpg" alt="tecnologias" width="80%">
+            <img src="proj/icos.png" alt="tecnologias" width="65%">
 
         </center>
 
         <p>
-            Considero oportunidades como Dev Backend com foco em python e Analista de Dados. 
+            Considero oportunidades como Analista de Dados ou Backend.
         </p>
 
         <h2>
-            Competências técnicas: 
+            Competências técnicas:
 
             <hr style="height: 0.5px; border: none; background-color: #33333321;">
         </h2>
 
         <p>
-            <strong>Linguagens:</strong> Python, SQL </br>
-            <strong>Manipulação de Dados:</strong> ETL, Pandas, Request, automação de fluxos de trabalho</br>
-            <strong>Visualização de Dados:</strong> Power BI, Relatórios, Definição de KPIs e Análise de tendências</br>
-            <strong>Automação e Pipeline de Dados:</strong> Configuração de pipelines, GitHub Actions</br>
+            <strong>Linguagens:</strong> Python (avançado), SQL </br>
+            <strong>Manipulação e Análise de Dados:</strong>ETL, Pandas, Requests, automação de fluxos, desenvolvimento
+            de métricas (KPIs) e análise preditiva de tendências</br>
+            <strong>Visualização de Dados:</strong> Dashboards interativos e relatórios com Power BI</br>
+            <strong>Automação e Integração de Dados:</strong> Pipelines, GitHub Actions, consumo de APIs REST</br>
             <strong>Desenvolvimento Web:</strong> HTML5, CSS3, JavaScript, React, Django, Flask, Streamlit</br>
             <strong>Bancos de Dados:</strong> Relacionais (PostgreSQL, MySQL) e não relacionais (MongoDB) </br>
-            <strong>Outros:</strong> Estatísticas aplicadas, Excel avançado, Power Query, Tabela dinâmica, Controle de versão com Git e GitHub, Integração e consumo de APIs REST  </br>
-            <strong>Idiomas:</strong> Inglês B2 </br>
+            <strong>Outros:</strong> Estatísticas aplicadas, Excel avançado, Power Query, tabelas dinâmicas, Git/GitHub
+            </br>
+            <strong>Idiomas:</strong> Inglês (Intermediário-avançado, B2) </br>
+            <strong>Github:</strong><a href="https://github.com/gersonmachado"> [Acesse meu github] </a>
         </p> </br>
 
-        <p>
-            Veja abaixo alguns projetos:
-        </p>
 
-        <div class="cols">
-                
-            <div class="iconbox">
-                <img src="proj/pbi-reviver.jpg" alt="Tela do Projeto" width="180px">
-                <h4 class="title">Dashboard Visão Geral Vendas - Power BI</h4>
-                <p class="description"> 
-                    Trabalho de análise de vendas, com KPIs importantes, visualizações e segmentações personalizadas para auxílio em decisões estratégicas. 
-                </p>
-                <a href="proj/dashboard_Reviver.pdf"> [Link para o projeto] </a>
-
-
-            </div>
-        </div>
+       
 
         <div class="row">
             <div class="cols">
-                
+
+                <div class="iconbox">
+                    <img src="proj/pbi-reviver.jpg" alt="Tela do Projeto" width="180px">
+                    <h4 class="title">Dashboard Visão Geral Vendas - Power BI</h4>
+                    <p class="description">
+                        Dashboard interativo com desenvolvimento de KPIs essenciais para monitoramento de vendas. Criação de
+                        visualizações e segmentações personalizadas, otimizando decisões estratégicas e gerando insights
+                        acionáveis para o negócio.
+                    </br>
+                        <a class="tag">Power BI</a>
+                        <a class="tag">Excel</a>
+                    </p>
+                    
+    
+                    <a href="proj/dashboard_Reviver.pdf"> [Link para o projeto] </a>
+    
+    
+                </div>
+            </div>
+            <div class="cols">
+
                 <div class="iconbox">
                     <img src="proj/betlit.png" alt="Tela do Projeto" width="180px">
                     <h4 class="title">Extração de dados e análise Jogos - Python</h4>
-                    <p class="description"> 
-                        Desenvolvi uma ferramenta de análise de jogos de futebol voltada para apostas esportivas, 
-                        utilizando <strong>Python e bibliotecas como requests, pandas e streamlit.</strong> 
-                        O projeto envolve o processo completo de ETL (Extração, Transformação e Carga) para 
-                        coletar e preparar dados relevantes para análises estratégicas e disponibilizar
-                        numa interface interativa.
+                    <p class="description">
+                        Ferramenta de análise de jogos esportivos para auxílio nas bets,
+                        utilizando <strong>Python e suas bibliotecas.</strong>
+                        O Desenvolvimento inclui o processo completo de ETL (Extração, Transformação e Carga) para
+                        reunir dados relevantes e disponibilizar análises numa interface interativa.
+                    </br>
+                    <a class="tag">Python</a>
+                    <a class="tag">Streamlit</a>
+                    <a class="tag">Requests</a>
+                    <a class="tag">Estatísticas</a>
+                    
                     </p>
                     <a href="https://betlit.streamlit.app/"> [Link para o projeto] </a>
 
@@ -183,12 +198,19 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <div class="cols">
-                
+
                 <div class="iconbox">
                     <img src="proj/pbi-cover.jpg" alt="Tela do Projeto" width="180px">
                     <h4 class="title">Dashboard Análise de Vendas - Power BI</h4>
-                    <p class="description"> 
-                        Análise de descritiva de clientes, vendas e suas categorias para decisões embasadas. Filtros personalizados para facilitar microgerenciamento de novas estratégias.
+                    <p class="description">
+                        Análise descritiva de clientes, vendas e suas categorias para decisões embasadas. Visualizações
+                        e segmentações personalizadas, otimizando decisões estratégicas e gerando insights
+                        significativos para o negócio.
+                    </br>
+                    <a class="tag">Power BI</a>
+                    <a class="tag">Excel</a>
+                    <a class="tag">CSV</a>
+                    <a class="tag">Estatísticas</a>
                     </p>
                     <a href="proj/analise_clientes.pdf"> [Link para o projeto] </a>
 
@@ -198,41 +220,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
             <div class="cols">
-                
+
                 <div class="iconbox">
                     <svg xmlns='http://www.w3.org/2000/svg' width="100" height="100" viewBox='0 0 16 16'>
-                        <path fill-rule="evenodd" d="M0 14h16v2H0v-2zm8.5-8l4-4H11V0h5v5h-2V3.5L9.5 8l-1 1-2-2-5 5L0 10.5 6.5 4 8 5.5l.5.5z" fill="#6e36f4"/>
+                        <path fill-rule="evenodd"
+                            d="M0 14h16v2H0v-2zm8.5-8l4-4H11V0h5v5h-2V3.5L9.5 8l-1 1-2-2-5 5L0 10.5 6.5 4 8 5.5l.5.5z"
+                            fill="#6e36f4" />
                     </svg>
                     <h4 class="title">BTC_Cronjob - Python</h4>
-                    <p class="description"> 
-                        Trabalho automatizado em cloud para rastrear o valor do Bitcoin (BTC) em reais (BRL) periodicamente e 
-                        armazenar os resultados em um arquivo CSV. A cada sexta, uma consulta é realizada 
-                        automaticamente através de GitHub Actions, que obtém o valor do BTC e o salva em 
-                        um arquivo de dados; <strong>python, pandas, yfinance e cronjob.</strong>
+                    <p class="description">
+                        Solução desenvolvida para automatizar, utilizando GitHub Actions, o rastreamento periódico do
+                        Bitcoin (BTC) em reais (BRL) e armazenar os dados em um arquivo CSV. A cada sexta-feira, um job
+                        é executado automaticamente, integrando Python e outras ferramentas para obter as cotações
+                        atualizadas. Essa rotina garante consistência na coleta de dados e pode ser utilizada para
+                        análises históricas e acompanhamento de tendências de mercado. 
+                            <a class="tag">python</a>
+                            <a class="tag">pandas</a>
+                            <a class="tag">yfinance</a>
+                            <a class="tag">cronjob</a>
+                            <a class="tag">Github Actions</a>
+
                     </p>
                     <a href="https://github.com/gersonmachado/btc_action"> [Link para o projeto] </a>
                 </div>
             </div>
 
             <div class="cols">
-                
+
                 <div class="iconbox">
                     <svg xmlns='http://www.w3.org/2000/svg' width="100" height="100" viewBox='0 0 16 16'>
-                        <path fill='#6e36f4' d='M9 6h2v14H9zm4 2h2v12h-2zm4-4h2v16h-2zM5 12h2v8H5z'/>
+                        <path fill='#6e36f4' d='M9 6h2v14H9zm4 2h2v12h-2zm4-4h2v16h-2zM5 12h2v8H5z' />
                     </svg>
                     <h4 class="title">Extração de Dados de Vendas da Steam - Python</h4>
-                    <p class="description"> 
-                        Solução de coleta e organização de dados de vendas de jogos na Steam, 
-                        extraindo informações detalhadas diretamente da página de promoções do SteamDB. 
-                        Utilizando <strong>Python, Selenium e pandas</strong>. Disponível o 
-                        conjunto de dados para análise ou consultas. 
+                    <p class="description">
+                        Solução de coleta e organização de dados de vendas de jogos na Steam,
+                        extraindo informações detalhadas diretamente da página de promoções do SteamDB.
+                        Utilizando <strong>Python, Selenium e pandas</strong>. Disponível o
+                        conjunto de dados para análise ou consultas.
+
+                    </br>
+                    <a class="tag">Python</a>
+                    <a class="tag">Selenium</a>
+                    <a class="tag">Excel</a>
+                    <a class="tag">Automação</a>
                     </p>
                     <a href="https://github.com/gersonmachado/steamdb_data"> [Link para o projeto] </a>
 
 
                 </div>
             </div>
-<!--
+            <!--
              <div class="cols">
                 
                 <div class="iconbox">
@@ -253,13 +290,14 @@ document.addEventListener('DOMContentLoaded', () => {
         </p>
 
         </center>
- -->         
- <a href="https://api.whatsapp.com/send?phone=5521982012309" class="btn-success" target="_blank" rel="noopener noreferrer">
-    Enviar mensagem no WhatsApp
-</a>
+ -->
+            <a href="https://api.whatsapp.com/send?phone=5521982012309" class="btn-success" target="_blank"
+                rel="noopener noreferrer">
+                Enviar mensagem no WhatsApp
+            </a>
     </main>
-        
-        
-    </body>
-    
-    </html>
+
+
+</body>
+
+</html>
