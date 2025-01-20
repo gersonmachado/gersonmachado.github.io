@@ -8,7 +8,6 @@
     <link rel="shortcut icon" type="imagex/png" href="./ico.svg">
     <title>Dev.Gerson</title>
 </head>
-
 <script>
 
     // Função para detectar se o dispositivo é iOS
@@ -152,12 +151,17 @@
 
 
        
+    <!-- O Modal -->
+    <div id="myModal" class="modal">
+        <img class="modal-content" id="img01">
+        <span class="close">&times;</span>
+    </div>
 
         <div class="row">
             <div class="cols">
 
                 <div class="iconbox">
-                    <img src="proj/pbi-reviver.jpg" alt="Tela do Projeto" width="180px">
+                    <img src="proj/pbi-reviver.jpg" id="img1" class="thumbnail" alt="Tela do Projeto" width="180px">
                     <h4 class="title">Dashboard Visão Geral Vendas - Power BI</h4>
                     <p class="description">
                         Dashboard interativo com desenvolvimento de KPIs essenciais para monitoramento de vendas. Criação de
@@ -177,7 +181,7 @@
             <div class="cols">
 
                 <div class="iconbox">
-                    <img src="proj/betlit.png" alt="Tela do Projeto" width="180px">
+                    <img src="proj/betlit.png" id="img2" class="thumbnail"  alt="Tela do Projeto" width="180px">
                     <h4 class="title">Extração de dados e análise Jogos - Python</h4>
                     <p class="description">
                         Ferramenta de análise de jogos esportivos para auxílio nas bets,
@@ -200,7 +204,7 @@
             <div class="cols">
 
                 <div class="iconbox">
-                    <img src="proj/pbi-cover.jpg" alt="Tela do Projeto" width="180px">
+                    <img src="proj/pbi-cover.jpg" id="img3" class="thumbnail" alt="Tela do Projeto" width="180px">
                     <h4 class="title">Dashboard Análise de Vendas - Power BI</h4>
                     <p class="description">
                         Análise descritiva de clientes, vendas e suas categorias para decisões embasadas. Visualizações
@@ -299,5 +303,5 @@
 
 
 </body>
-
+<script src="modal.js"></script>
 </html>
