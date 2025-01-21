@@ -27,6 +27,7 @@ span.onclick = function() {
 var zoomLevel = 1;
 var zoomFactor = 0.1; // Fator de zoom por evento de rolagem
 
+
 // Adiciona evento de rolagem no modal
 modalImg.addEventListener('wheel', function(event) {
   event.preventDefault(); // Previne o comportamento padrão da rolagem
@@ -39,9 +40,15 @@ modalImg.addEventListener('wheel', function(event) {
   }
 
   // Limita o zoom para um intervalo razoável
-  if (zoomLevel < 0.5) zoomLevel = 0.5;  // Limite mínimo
-  if (zoomLevel > 3) zoomLevel = 3;      // Limite máximo
+  if (zoomLevel < 1) zoomLevel = 1;  // Limite mínimo
+  if (zoomLevel > 1.5) zoomLevel = 1.5;      // Limite máximo
 
   // Aplica o zoom à imagem
   modalImg.style.transform = 'scale(' + zoomLevel + ')';
 });
+
+
+
+modalImg.onmousedown = function(event) {
+  event.preventDefault();  // Previne o comportamento de arrastar a imagem como arquivo
+};
