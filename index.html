@@ -19,15 +19,7 @@
   gtag('config', 'G-LYPGEJ6HN8');
 </script>
 
-<!-- Evento rastreio de click CV -->
-<script>
-    document.getElementById('down_cv').addEventListener('click', function() {
-      gtag('event', 'link_downloadcv_clicado', {
-        'event_category': 'Interação',
-        'event_label': 'Botão de Currículo'
-      });
-    });
-  </script>
+
 
 <script>
 
@@ -325,4 +317,14 @@
 
 </body>
 <script src="modal.js"></script>
+
+<!-- Evento rastreio de click CV -->
+<script>
+    document.getElementById('down_cv').addEventListener('click', function() {
+      gtag('event', 'link_downloadcv_clicado', {
+        'event_category': 'Interação',
+        'event_label': 'Botão de Currículo'
+      });
+    });
+  </script>
 </html>
